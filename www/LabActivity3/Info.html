@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse:collapse;
+            }
+            
+            th, td {
+                padding: 5px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        
+        <button type="button" onclick="ListofStudent()">Show the List of Student</button>
+        <br><br>
+        <table id="demo"></table>
+
+        <Script>
+            function ListofStudent() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200 ) {
+                        myFunction(this) ;
+
+                    }
+                };
+                xmlhttp.open("Get","info.xml", true);
+                xmlhttp.send();
+            }
+            function myFunction(xml){
+                var i;
+                var xmlDoc = xml.responseXML;
+                var table = "<tr><th>Fullname</th><th>Birthday</th><th>Address</th><th>Course</th><th>Year Level</th></tr>" ;
+                var x = xmlDoc.getElementsByTagName("cd");
+                for (i = 0; i <x.length; i++) {
+                    table += "<tr><td>" +
+                    x[i].getElementsByTagName("FULLNAME")[0].childNodes[0].nodeValue +
+                    "</td><td>" + 
+                    x[i].getElementsByTagName("BIRTHDAY")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("ADDRESS")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("COURSE")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("YEARLEVEL")[0].childNodes[0].nodeValue +
+                    "</td>" ;
+                }
+                document.getElementById("demo").innerHTML = table;
+                
+            }
+        </Script>
+    </body>
+</html>

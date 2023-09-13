@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lost and Found Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #000000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Align items to the right side */
+            align-items: center;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #f7f6f6;
+            text-align: center; /* Center the text horizontally within the h1 element */
+            margin: 0; /* Remove margin to center the text vertically */
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style for the "About" button */
+        .about-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: 10px solid #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: auto; /* Move the button to the right */
+        }
+
+        /* Style for the "Admin Login" button */
+        .admin-login-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: 10px solid #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lost and Found System Login</h1>
+        <!-- Move the "About" button to the right side closer to the "Admin Login" button -->
+        <a href="about.html" class="about-button">About</a>
+        <a href="admin_login.html" class="admin-login-button">Admin Login</a>
+    </header>
+
+    <div class="container">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <button type="button" onclick="login()">Login</button>
+        </form>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            
+            // Simulated admin authentication (replace with actual authentication)
+            if (username === "" || password === "") {
+                alert("Invalid username or password. Please fill out both fields.");
+            } else {
+                alert("Login successful!"); // You can replace this with the actual login logic
+            }
+        }
+    </script>
+    
+</body>
+</html>
